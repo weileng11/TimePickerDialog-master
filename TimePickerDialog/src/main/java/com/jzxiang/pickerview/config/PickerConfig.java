@@ -29,6 +29,9 @@ public class PickerConfig {
     public String mHour = DefaultConfig.HOUR;
     public String mMinute = DefaultConfig.MINUTE;
 
+    public int mTitleTVSize = DefaultConfig.TV_SIZE;
+    public int mTitleCanclTrueTVSize = DefaultConfig.TV_SIZE;
+
     /**
      * The min timeMillseconds
      */

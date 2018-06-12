@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.jzxiang.pickerview.sample"
-        minSdkVersion 8
-        targetSdkVersion 23
+        minSdkVersion 15
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -22,6 +22,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.0'
-//    compile project(':TimePickerDialog')
+//    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.0'
+    compile project(':TimePickerDialog')
 }

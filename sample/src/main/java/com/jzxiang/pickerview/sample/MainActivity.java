@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setWheelItemTextNormalColor(getResources().getColor(R.color.timetimepicker_default_text_color))
                 .setWheelItemTextSelectorColor(getResources().getColor(R.color.timepicker_toolbar_bg))
                 .setWheelItemTextSize(12)
+                .setTitleCanclTrueTextSize(12)
+                .setTitleTextSize(12)
                 .build();
 
 //        mDialogAll = new TimePickerDialog.Builder()

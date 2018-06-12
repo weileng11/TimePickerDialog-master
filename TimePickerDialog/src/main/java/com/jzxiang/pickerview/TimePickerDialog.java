@@ -80,8 +80,12 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
         View toolbar = view.findViewById(R.id.toolbar);
 
         title.setText(mPickerConfig.mTitleString);
+        title.setTextSize(mPickerConfig.mTitleTVSize);
+
         cancel.setText(mPickerConfig.mCancelString);
         sure.setText(mPickerConfig.mSureString);
+        cancel.setTextSize(mPickerConfig.mTitleCanclTrueTVSize);
+        sure.setTextSize(mPickerConfig.mTitleCanclTrueTVSize);
         toolbar.setBackgroundColor(mPickerConfig.mThemeColor);
 
         mTimeWheel = new TimeWheel(view, mPickerConfig);
@@ -141,14 +145,13 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
             mPickerConfig = new PickerConfig();
         }
 
-        public Builder setTitleTextSize(int size) {
-            title.setTextSize(size);
+        public  Builder setTitleTextSize(int size) {
+            mPickerConfig.mTitleTVSize=size;
             return this;
         }
 
-        public Builder setTitleCanclTrueTextSize(int size) {
-            cancel.setTextSize(size);
-            sure.setTextSize(size);
+        public  Builder setTitleCanclTrueTextSize(int size) {
+            mPickerConfig.mTitleCanclTrueTVSize=size;
             return this;
         }
 
@@ -252,6 +255,5 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
         }
 
     }
-
 
 }
