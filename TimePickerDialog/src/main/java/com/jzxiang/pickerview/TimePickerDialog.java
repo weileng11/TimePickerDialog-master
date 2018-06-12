@@ -28,6 +28,7 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
     PickerConfig mPickerConfig;
     private TimeWheel mTimeWheel;
     private long mCurrentMillSeconds;
+    private TextView cancel, sure,title;
 
     private static TimePickerDialog newIntance(PickerConfig pickerConfig) {
         TimePickerDialog timePickerDialog = new TimePickerDialog();
@@ -71,11 +72,11 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
     View initView() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.timepicker_layout, null);
-        TextView cancel = (TextView) view.findViewById(R.id.tv_cancel);
+        cancel = (TextView) view.findViewById(R.id.tv_cancel);
         cancel.setOnClickListener(this);
-        TextView sure = (TextView) view.findViewById(R.id.tv_sure);
+        sure = (TextView) view.findViewById(R.id.tv_sure);
         sure.setOnClickListener(this);
-        TextView title = (TextView) view.findViewById(R.id.tv_title);
+        title = (TextView) view.findViewById(R.id.tv_title);
         View toolbar = view.findViewById(R.id.toolbar);
 
         title.setText(mPickerConfig.mTitleString);
@@ -96,7 +97,7 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
             sureClicked();
         }
     }
-    
+
     /*
     * @desc This method returns the current milliseconds. If current milliseconds is not set,
     *       this will return the system milliseconds.
@@ -138,6 +139,17 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
 
         public Builder() {
             mPickerConfig = new PickerConfig();
+        }
+
+        public Builder setTitleTextSize(int size) {
+            title.setTextSize(size);
+            return this;
+        }
+
+        public Builder setTitleCanclTrueTextSize(int size) {
+            cancel.setTextSize(size);
+            sure.setTextSize(size);
+            return this;
         }
 
         public Builder setType(Type type) {
@@ -205,27 +217,27 @@ public class TimePickerDialog extends DialogFragment implements View.OnClickList
             return this;
         }
 
-        public Builder setYearText(String year){
+        public Builder setYearText(String year) {
             mPickerConfig.mYear = year;
             return this;
         }
 
-        public Builder setMonthText(String month){
+        public Builder setMonthText(String month) {
             mPickerConfig.mMonth = month;
             return this;
         }
 
-        public Builder setDayText(String day){
+        public Builder setDayText(String day) {
             mPickerConfig.mDay = day;
             return this;
         }
 
-        public Builder setHourText(String hour){
+        public Builder setHourText(String hour) {
             mPickerConfig.mHour = hour;
             return this;
         }
 
-        public Builder setMinuteText(String minute){
+        public Builder setMinuteText(String minute) {
             mPickerConfig.mMinute = minute;
             return this;
         }
